@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "global.h": "c",
+        "stdint.h": "c",
+        "file_handling.h": "c"
+    }
+}

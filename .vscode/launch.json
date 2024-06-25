@@ -1,0 +1,80 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Version_A",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Version_A/mini_hypervisor",
+            "args": ["--memory", "2", "--page", "4KB", "--guest", "./Guest/guest.img"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+              {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+              },
+              {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+              }
+            ]
+          },
+          {
+            "name": "Version_B",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Version_B/mini_hypervisor",
+            "args": ["--memory", "4", "--page", "2MB", "--guest", "./Guest/guest1.img", "./Guest/guest2.img"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+              {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+              },
+              {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+              }
+            ]
+          },
+          {
+            "name": "Version_C",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Version_C/mini_hypervisor",
+            "args": ["--memory", "4", "--page", "4KB", "--guest", "../Guest/C/guest1.img", "../Guest/C/guest2.img", "-f", "./flowers.txt"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}/Version_C",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+              {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+              },
+              {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+              }
+            ]
+          }
+    ]
+}
